@@ -62,7 +62,7 @@
 		<h1 align="center" style="color:#222222">i好心情(後臺管理)</h1>
 		<nav>
 			<ul class="flex-nav">
-				<li><a href="javascript:show('');"><b>使用者管理</b></a></li>
+				<li><a href="javascript:show('user_management.php');"><b>使用者管理</b></a></li>
 				<li><a href=""><b>學生心情</b></a></li>
 				<li><a href=""><b>學生日記</b></a></li>
 			</ul>
