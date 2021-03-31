@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/button.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-				function show(t){
+				function show_management(t){
 					$.ajax({
 						type:'GET',
 						url: t,
@@ -26,8 +26,8 @@
 	<body>
 		</p>
 		<center>
-			<button class='button' id='teacher' name='teacher' onclick="show('teacher_management.php')"><b>老師</b></button>
-			<button class='button' id='teacher' name='teacher' onclick="show('student_management.php')"><b>學生</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_management('teacher_management.php')"><b>老師</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_management('student_management.php')"><b>學生</b></button>
 		</center>
 		</p>
 		<div id='show_management'></div>
