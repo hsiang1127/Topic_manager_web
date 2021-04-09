@@ -26,8 +26,10 @@
 	<body>
 		</p>
 		<center>
-			<button class='button' id='teacher' name='teacher' onclick="show_management('teacher_management.php')"><b>老師</b></button>
+			<!--<button class='button' id='teacher' name='teacher' onclick="show_management('teacher_management.php')"><b>老師</b></button>-->
 			<button class='button' id='teacher' name='teacher' onclick="show_management('student_management.php')"><b>學生</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_management('parent_management.php')"><b>家長</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_management('user_ins.php')"><b>新增使用者</b></button>
 		</center>
 		</p>
 		<div id='show_management'></div>
