@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include("conn.php");
 	$x=$_GET['x'];
 	if($x=="student"){
@@ -6,12 +7,14 @@
 		$ins=mysqli_query($conn,$sql);
 		if($ins){
 			header("Location:main.php");
+			$_SESSION['url']="s";
 		}
 	}else if($x=="parent"){
 		$sql="INSERT INTO `parent`(`parent_id`, `password`, `child`, `parent_name`) VALUES ('$_GET[user]','$_GET[password]','$_GET[child]','')";
 		$ins=mysqli_query($conn,$sql);
 		if($ins){
 			header("Location:main.php");
+			$_SESSION['url']="p";
 		}
 	}
 

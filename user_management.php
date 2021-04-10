@@ -1,4 +1,5 @@
 <?php  
+	session_start();
 	include('conn.php');
 ?>
 <html>
@@ -24,6 +25,17 @@
 	<style>
 	</style>
 	<body>
+		<?php
+			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
+				if($_SESSION["url"]=="s"){
+					echo "<script>show_management('student_management.php');</script>";
+					$_SESSION["url"]="";
+				}else{
+					echo "<script>show_management('parent_management.php');</script>";
+					$_SESSION["url"]="";
+				}
+			}
+		?>
 		</p>
 		<center>
 			<!--<button class='button' id='teacher' name='teacher' onclick="show_management('teacher_management.php')"><b>老師</b></button>-->
