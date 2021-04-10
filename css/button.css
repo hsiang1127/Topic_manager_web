@@ -19,7 +19,7 @@
     background-color: #4CAF50;
     color: white;
 }
-/*.button:focus {
+.button:focus {
 	background-color: #4CAF50;
     color: white;
-}*/
+}
