@@ -17,7 +17,7 @@
 	</header>
 	<body>
 		</p>
-		<table align='center' width='40%'>
+		<table align='center' width='60%'>
 			<tr>
 				<th width="25%">學號</th>
 				<th width="25%">遊戲種類</th>
