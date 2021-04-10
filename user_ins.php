@@ -74,7 +74,7 @@
 				<td><input type='text' id='child' name='child'></td>
 			</tr>
 			<tr>
-				<td colspan='2a'><button class='button' id='ins' name='ins' onclick="userins();"><b>確認新增</b></button></td>
+				<td colspan='2'><button class='button' id='ins' name='ins' onclick="userins();"><b>確認新增</b></button></td>
 			</tr>
 		</table>
 	</body>
