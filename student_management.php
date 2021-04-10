@@ -8,7 +8,20 @@
 		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<link rel="stylesheet" type="text/css" href="css/button.css">
 		<style>
-		
+			.button_upd {
+				border: 2px solid #5599FF;
+			}
+			.button_upd:hover {
+				background-color: #5599FF;
+				color: white;
+			}
+			.button_del {
+				border: 2px solid #FF3333;
+			}
+			.button_del:hover {
+				background-color: #FF3333;
+				color: white;
+			}
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
@@ -27,6 +40,7 @@
 				<th>生日</th>
 				<th>爸爸年齡</th>
 				<th>媽媽年齡</th>
+				<th></th>
 			</tr>
 			<?php
 				$sel_student=mysqli_query($conn,"select * from `student`");
@@ -40,7 +54,11 @@
 							<td>$sel_student_ok[sex]</td>
 							<td>$sel_student_ok[birthday]</td>
 							<td>$sel_student_ok[father_year]</td>
-							<td>$sel_student_ok[mom_year]</td>
+							<td>$sel_student_ok[mom_year]</td>	
+							<td>
+								<button class='button button_upd' onclick=\"show('student_upd.php?user=$sel_student_ok[student_id]')\"><b>修改</b></button>
+								<button class='button button_del' onclick=\"show('student_del_ok.php?user=$sel_student_ok[student_id]')\"><b>刪除</b></button>
+							</td>
 						</tr>
 					";
 				}
