@@ -8,10 +8,14 @@
 		die("請您依正常管道登入;)");
 	}*/
 ?>
+
 <html>
-    <header>
+	
+    <head>
 		<title>後臺管理</title>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="images/icons/heart.ico"/>
 		<style>
 			body {
 				background-color: #FFF6CC;
@@ -55,7 +59,7 @@
 					});
 				}
 		</script>
-	</header>
+	</head>
 	<body>
 		<?php
 			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
