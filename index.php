@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form" action="login.php" method="POST">
 					<span style="font-family:Times New Roman;font-size:30px;font-color:#444444" class="login100-form-title">
-						<b>i好心情(後臺管理)</b>
+						<b>Accompany  Interaction</b>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "您未輸入帳號">
