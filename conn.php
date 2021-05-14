@@ -1,5 +1,5 @@
 <?php
-	$conn = mysqli_connect("localhost","root","");
+	$conn = mysqli_connect("localhost","spopob8v48s2","Mm35176661");
 	if(!$conn){
 		die("連線失敗");
 	}
