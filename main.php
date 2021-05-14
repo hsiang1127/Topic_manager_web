@@ -71,9 +71,8 @@
 		<nav>
 			<ul class="flex-nav">
 				<li><a href="javascript:show('user_management.php');"><b>使用者管理</b></a></li>
-				<li><a href="javascript:show('play_history.php');"><b>兒童遊玩紀錄</b></a></li>
-				<li><a href=""><b>學生心情</b></a></li>
-				<li><a href=""><b>學生日記</b></a></li>
+				<li><a href="javascript:show('app_history.php');"><b>App紀錄查詢</b></a></li>
+				<li><a href="javascript:show('');"><b>量表管理</b></a></li>
 				<li><a href="javascript:location.href='index.php';"><b>登出</b></a></li>
 			</ul>
 		</nav>

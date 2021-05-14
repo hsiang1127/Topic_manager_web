@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>i好心情</title>
+	<title>Accompany  Interaction</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form" action="login.php" method="POST">
 					<span style="font-family:Times New Roman;font-size:30px;font-color:#444444" class="login100-form-title">
-						<b>Accompany  Interaction</b>
+						<b>AI後台管理</b>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "您未輸入帳號">
