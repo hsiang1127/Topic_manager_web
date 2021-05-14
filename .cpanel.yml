@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/spopob8v48s2/public_html/
-    -/home/spopob8v48s2/repositories/Topic_manager_web $DEPLOYPATH
