@@ -72,7 +72,7 @@
 			<ul class="flex-nav">
 				<li><a href="javascript:show('user_management.php');"><b>使用者管理</b></a></li>
 				<li><a href="javascript:show('app_history.php');"><b>App紀錄查詢</b></a></li>
-				<li><a href="javascript:show('');"><b>量表管理</b></a></li>
+				<li><a href="javascript:show('scale.php');"><b>量表管理</b></a></li>
 				<li><a href="javascript:location.href='index.php';"><b>登出</b></a></li>
 			</ul>
 		</nav>
