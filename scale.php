@@ -27,7 +27,7 @@
 	<body>
 		</p>
 		<center>
-			<button class='button' id='teacher' name='teacher' onclick="show_scalemanagement('')"><b>量表頻率</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_scalemanagement('scale_frequency.php')"><b>量表頻率</b></button>
 			<button class='button' id='teacher' name='teacher' onclick="show_scalemanagement('')"><b>社會適應量表</b></button>
 			<button class='button' id='teacher' name='teacher' onclick="show_scalemanagement('')"><b>情緒障礙量表</b></button>
 		</center>
