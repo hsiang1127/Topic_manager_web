@@ -17,18 +17,19 @@
 	</header>
 	<body>
 		</p>
-		<table align='center' width='30%'>
+		<table align='center' width='40%'>
 			
 			<?php
-				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w`");
+				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `parent_id`<>\"\"");
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
 				}else{
 			?>
 					<tr>
-						<th width="50%">家長帳號</th>
-						<th width="50%">填寫時間</th>
+						<th width="40%">家長帳號</th>
+						<th width="40%">填寫時間</th>
+						<th width="20%"></th>
 					</tr>
 			<?php		
 				}
@@ -37,6 +38,7 @@
 						<tr>
 							<td>$sel_adaptation_ok[parent_id]</td>
 							<td>$sel_adaptation_ok[write_time]</td>
+							<td><button class='button' id='teacher' name='teacher'><b>詳細資料</b></button></td>
 						</tr>
 					";
 				}
