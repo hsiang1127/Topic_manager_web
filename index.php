@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Accompany  Interaction</title>
+	<title>Accompany Interaction</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -31,10 +31,12 @@
 				</div>
 
 				<form class="login100-form validate-form" action="login.php" method="POST">
-					<span style="font-family:Times New Roman;font-size:30px;font-color:#444444" class="login100-form-title">
-						<b>AI後台管理</b>
+					<span style="font-family:Times New Roman;font-size:27px;font-color:#444444" class="login100-form-title">
+						<b>
+							Accompany Interaction<br/>
+							(後臺管理)
+						</b>
 					</span>
-
 					<div class="wrap-input100 validate-input" data-validate = "您未輸入帳號">
 						<input class="input100" type="text" name="user" placeholder="User Account">
 						<span class="focus-input100"></span>

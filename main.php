@@ -67,7 +67,7 @@
 			}
 		?>
 		<div style="height:0.1%"></div>
-		<h1 align="center" style="color:#222222">i好心情(後臺管理)</h1>
+		<h1 align="center" style="color:#222222">Accompany Interaction(後臺管理)</h1>
 		<nav>
 			<ul class="flex-nav">
 				<li><a href="javascript:show('user_management.php');"><b>使用者管理</b></a></li>
