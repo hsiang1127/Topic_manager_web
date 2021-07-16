@@ -57,7 +57,7 @@
 							echo "
 								<td align='left'>
 									<button class='button button_upd' onclick=\"show_management('student_upd.php?user=$sel_student_ok[user_id]')\"><b>修改</b></button>
-									<button class='button button_del' onclick=\"show_management('student_del_ok.php?user=$sel_student_ok[user_id]')\"><b>刪除</b></button>
+									<button class='button button_del' onclick=\"location.href='student_del_ok.php?user=$sel_student_ok[user_id]'\"><b>刪除</b></button>
 									<button class='button' onclick=\"show_management('relationship_ins.php?id=$sel_student_ok[user_id]')\"><b>親子綁定</b></button>
 								</td>
 							";
@@ -65,7 +65,7 @@
 							echo "
 								<td align='left'>
 									<button class='button button_upd' onclick=\"show_management('student_upd.php?user=$sel_student_ok[user_id]')\"><b>修改</b></button>
-									<button class='button button_del' onclick=\"show_management('student_del_ok.php?user=$sel_student_ok[user_id]')\"><b>刪除</b></button>
+									<button class='button button_del' onclick=\"location.href='student_del_ok.php?user=$sel_student_ok[user_id]'\"><b>刪除</b></button>
 									<button class='button' onclick=\"show_management('relationship_sel.php?id=$sel_student_ok[user_id]')\"><b>查看親子資料</b></button>
 								</td>
 							";
