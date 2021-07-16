@@ -1,12 +1,5 @@
 <?php  
 	session_start();
-	/*if (!isset($_SESSION['login'])){
-		die("請您登入系統~");
-	}
-	
-	if ($_SESSION['login']!=1){
-		die("請您依正常管道登入;)");
-	}*/
 ?>
 
 <html>
@@ -63,7 +56,11 @@
 	<body>
 		<?php
 			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
-				echo "<script>show('user_management.php');</script>";
+				if($_SESSION["url"]=="s" || $_SESSION["url"]=="p"){
+					echo "<script>show('user_management.php');</script>";
+				}else if($_SESSION["url"]=="mood_thermometer"){
+					echo "<script>show('studentapp_history.php');</script>";
+				}
 			}
 		?>
 		<div style="height:0.1%"></div>
