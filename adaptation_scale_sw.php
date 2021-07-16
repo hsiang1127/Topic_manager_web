@@ -27,9 +27,19 @@
 				}else{
 			?>
 					<tr>
-						<th width="40%">學生帳號</th>
-						<th width="40%">填寫時間</th>
-						<th width="20%"></th>
+						<th>學生帳號</th>
+						<th>Q1</th>
+						<th>Q2</th>
+						<th>Q3</th>
+						<th>Q4</th>
+						<th>Q5</th>
+						<th>Q6</th>
+						<th>Q7</th>
+						<th>Q8</th>
+						<th>Q9</th>
+						<th>Q10</th>
+						<th>填寫時間</th>
+						<th></th>
 					</tr>
 			<?php		
 				}
@@ -37,12 +47,25 @@
 					echo "
 						<tr>
 							<td>$sel_adaptation_ok[student_id]</td>
+							<td>$sel_adaptation_ok[q1]</td>
+							<td>$sel_adaptation_ok[q2]</td>
+							<td>$sel_adaptation_ok[q3]</td>
+							<td>$sel_adaptation_ok[q4]</td>
+							<td>$sel_adaptation_ok[q5]</td>
+							<td>$sel_adaptation_ok[q6]</td>
+							<td>$sel_adaptation_ok[q7]</td>
+							<td>$sel_adaptation_ok[q8]</td>
+							<td>$sel_adaptation_ok[q9]</td>
+							<td>$sel_adaptation_ok[q10]</td>
 							<td>$sel_adaptation_ok[write_time]</td>
+							<td><button class='button button_del' onclick=\"show('adaptation_scale_sdata_del.php?id=$sel_adaptation_ok[w_scale_id]')\"><b>刪除</b></button></td>
+						</tr>	
+					";
+					/*echo "
 							<td>
 								<button class='button' onclick=\"show('adaptation_scale_sdata.php?id=$sel_adaptation_ok[w_scale_id]')\"><b>詳細資料</b></button>
 							</td>
-						</tr>
-					";
+					";*/
 				}
 			?>
 		</table>
