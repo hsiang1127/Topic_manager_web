@@ -8,7 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<link rel="stylesheet" type="text/css" href="css/button.css">
 		<style>
-		
+			.button_upd {
+				border: 2px solid #5599FF;
+			}
+			.button_upd:hover {
+				background-color: #5599FF;
+				color: white;
+			}
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
@@ -42,7 +48,7 @@
 				<td><input type='text' id='password' name='password' style="text-align:center;" value='<?php echo $sel_ok['password'];?>'></td>
 			</tr>
 			<tr>
-				<td colspan='2'><button class='button' onclick="parent_upd();"><b>確認修改</b></button></td>
+				<td colspan='2'><button class='button button_upd' onclick="parent_upd();"><b>確認修改</b></button></td>
 			</tr>
 		</table>
 		<?php		
