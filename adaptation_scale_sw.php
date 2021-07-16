@@ -27,7 +27,7 @@
 				}else{
 			?>
 					<tr>
-						<th width="40%">學號</th>
+						<th width="40%">學生帳號</th>
 						<th width="40%">填寫時間</th>
 						<th width="20%"></th>
 					</tr>
@@ -38,7 +38,9 @@
 						<tr>
 							<td>$sel_adaptation_ok[student_id]</td>
 							<td>$sel_adaptation_ok[write_time]</td>
-							<td><button class='button' id='teacher' name='teacher'><b>詳細資料</b></button></td>
+							<td>
+								<button class='button' onclick=\"show('adaptation_scale_sdata.php?id=$sel_adaptation_ok[w_scale_id]')\"><b>詳細資料</b></button>
+							</td>
 						</tr>
 					";
 				}
