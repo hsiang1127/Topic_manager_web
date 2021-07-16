@@ -8,7 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<link rel="stylesheet" type="text/css" href="css/button.css">
 		<style>
-		
+			.button_del {
+				border: 2px solid #FF3333;
+			}
+			.button_del:hover {
+				background-color: #FF3333;
+				color: white;
+			}
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
