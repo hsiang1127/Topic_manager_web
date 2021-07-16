@@ -36,6 +36,12 @@
 				}else if($_SESSION["url"]=="diary" ){
 					echo "<script>show_apphistory('mood_diary_w.php');</script>";
 					$_SESSION["url"]="";
+				}else if($_SESSION["url"]=="play" ){
+					echo "<script>show_apphistory('play_history.php');</script>";
+					$_SESSION["url"]="";
+				}else if($_SESSION["url"]=="video" ){
+					echo "<script>show_apphistory('video.php');</script>";
+					$_SESSION["url"]="";
 				}
 			}
 		?>

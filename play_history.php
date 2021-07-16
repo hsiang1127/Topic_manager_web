@@ -58,7 +58,7 @@
 						}
 					echo "	
 							<td>$sel_play_history_ok[play_date]</td>
-							<td>$sel_play_history_ok[play_time]分</td>
+							<td>$sel_play_history_ok[play_time]秒</td>
 							<td>
 								<button class='button button_del' onclick=\"show('play_history_del.php?id=$sel_play_history_ok[play_id]')\"><b>刪除</b></button>
 							</td>
