@@ -33,6 +33,9 @@
 				}else if($_SESSION["url"]=="mood_thermometer" ){
 					echo "<script>show_apphistory('mood_thermometer_w.php');</script>";
 					$_SESSION["url"]="";
+				}else if($_SESSION["url"]=="diary" ){
+					echo "<script>show_apphistory('mood_diary_w.php');</script>";
+					$_SESSION["url"]="";
 				}
 			}
 		?>
