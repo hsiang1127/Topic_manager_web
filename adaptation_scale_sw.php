@@ -56,7 +56,7 @@
 		<table align='center' width='40%'>
 			
 			<?php
-				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\"");
+				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `write_time` desc");
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
