@@ -15,21 +15,13 @@
 			function parent_upd(){
 				var user=document.getElementById("user").value;
 				var password=document.getElementById("password").value;
-				var child=document.getElementById("child").value;
-				var name=document.getElementById("p_name").value;
+				//var child=document.getElementById("child").value;
+				//var name=document.getElementById("p_name").value;
 				if(password==""){
 					alert('密碼未輸入!!');
 					return false;
 				}
-				if(child==""){
-					alert('小孩學號未輸入!!');
-					return false;
-				}
-				if(name==""){
-					alert('姓名未輸入!!');
-					return false;
-				}
-				window.location.href="parent_upd_ok.php?user="+user+"&password="+password+"&child="+child+"&name="+name;
+				window.location.href="parent_upd_ok.php?user="+user+"&password="+password;
 			}
 		</script>
 	</header>
@@ -48,14 +40,6 @@
 			<tr>
 				<th>密碼</th>
 				<td><input type='text' id='password' name='password' style="text-align:center;" value='<?php echo $sel_ok['password'];?>'></td>
-			</tr>
-			<tr>
-				<th>小孩學號</th>
-				<td><input type='text' id='child' name='child' style="text-align:center;" value='<?php echo $sel_ok['child'];?>'></td>
-			</tr>
-			<tr>
-				<th>姓名</th>
-				<td><input type='text' id='p_name' name='p_name' style="text-align:center;" value='<?php echo $sel_ok['parent_name'];?>'></td>
 			</tr>
 			<tr>
 				<td colspan='2'><button class='button' onclick="parent_upd();"><b>確認修改</b></button></td>
