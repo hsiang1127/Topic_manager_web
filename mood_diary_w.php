@@ -63,9 +63,9 @@
 							<td>$sel_diary_ok[content4]</td>
 							<td>
 					";
-							echo (strtotime($sel_diary_ok['write_time_start']) - strtotime($sel_diary_ok['write_time_end']))/ (60);
+							echo (strtotime($sel_diary_ok['write_time_end']) - strtotime($sel_diary_ok['write_time_start']))/ (60);
 					echo "
-							</td>
+							　分</td>
 							<td>$sel_diary_ok[fraction]</td>
 							<td>$sel_diary_ok[write_diary_time]</td>
 							<td><button class='button button_del' onclick=\"show_apphistory('mood_diary_del.php?id=$sel_diary_ok[diary_id]')\"><b>刪除</b></button></td>
