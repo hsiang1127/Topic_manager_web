@@ -117,7 +117,7 @@
 				
 				for($i=0;$i<count($arrayq);$i++){
 					$ii=$i+1;
-					echo "$ii.$arrayq[$i]<br/>";
+					echo "Q$ii.$arrayq[$i]<br/>";
 				}
 			?>
 			<p/>
