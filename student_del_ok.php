@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("conn.php");
-	$sql="delete from `student` where `student_id`='$_GET[user]'";
+	$sql="delete from `student` where `user_id`='$_GET[user]'";
 	$del=mysqli_query($conn,$sql);
 	if($del){
 		header("Location:main.php");
