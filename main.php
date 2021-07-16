@@ -58,7 +58,7 @@
 			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
 				if($_SESSION["url"]=="s" || $_SESSION["url"]=="p"){
 					echo "<script>show('user_management.php');</script>";
-				}else if($_SESSION["url"]=="mood_thermometer"){
+				}else if($_SESSION["url"]=="mood_thermometer" || $_SESSION["url"]=="adaptation_scale_sw"){
 					echo "<script>show('studentapp_history.php');</script>";
 				}
 			}

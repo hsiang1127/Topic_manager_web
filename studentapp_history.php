@@ -27,7 +27,10 @@
 	<body>
 		<?php
 			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
-				if($_SESSION["url"]=="mood_thermometer"){
+				if($_SESSION["url"]=="adaptation_scale_sw"){
+					echo "<script>show_apphistory('adaptation_scale_sw.php');</script>";
+					$_SESSION["url"]="";
+				}else if($_SESSION["url"]=="mood_thermometer" ){
 					echo "<script>show_apphistory('mood_thermometer_w.php');</script>";
 					$_SESSION["url"]="";
 				}
