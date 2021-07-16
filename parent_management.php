@@ -72,8 +72,8 @@
 						";*/
 						echo "
 								<td>
-									<button class='button button_upd' onclick=\"show('parent_upd.php?user=$sel_parent_ok[parent_id]')\"><b>修改</b></button>
-									<button class='button button_del' style='' onclick=\"show('parent_del_ok.php?user=$sel_parent_ok[parent_id]')\"><b>刪除</b></button>
+									<button class='button button_upd' onclick=\"show_management('parent_upd.php?user=$sel_parent_ok[parent_id]')\"><b>修改</b></button>
+									<button class='button button_del' style='' onclick=\"location.href='parent_del_ok.php?user=$sel_parent_ok[parent_id]'\"><b>刪除</b></button>
 								</td>
 							</tr>
 						";
