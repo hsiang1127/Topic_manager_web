@@ -23,12 +23,12 @@
 				var password=document.getElementById("password").value;
 				var stuid=document.getElementById("stuid").value;
 				var name=document.getElementById("name").value;
-				var s_year=document.getElementById("s_year").value;
-				var s_class=document.getElementById("s_class").value;
+				//var s_year=document.getElementById("s_year").value;
+				//var s_class=document.getElementById("s_class").value;
 				var sex=document.querySelector('input[name="sex"]:checked').value;
 				var birthday=document.getElementById("birthday").value;
-				var m_year=document.getElementById("m_year").value;
-				var f_year=document.getElementById("f_year").value;
+				//var m_year=document.getElementById("m_year").value;
+				//var f_year=document.getElementById("f_year").value;
 				if(password==""){
 					alert('密碼未輸入!!');
 					return false;
@@ -41,23 +41,7 @@
 					alert('姓名未輸入!!');
 					return false;
 				}
-				if(s_year==""){
-					alert('年級未輸入!!');
-					return false;
-				}
-				if(s_class==""){
-					alert('班級未輸入!!');
-					return false;
-				}
-				if(m_year==""){
-					alert('媽媽年齡未輸入!!');
-					return false;
-				}
-				if(f_year==""){
-					alert('爸爸年齡未輸入!!');
-					return false;
-				}
-				window.location.href="student_upd_ok.php?user="+user+"&password="+password+"&stuid="+stuid+"&name="+name+"&s_year="+s_year+"&s_class="+s_class+"&sex="+sex+"&birthday="+birthday+"&m_year="+m_year+"&f_year="+f_year;
+				window.location.href="student_upd_ok.php?user="+user+"&password="+password+"&stuid="+stuid+"&name="+name+"&sex="+sex+"&birthday="+birthday;
 			}
 		</script>
 	</header>
