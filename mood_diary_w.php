@@ -8,7 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<link rel="stylesheet" type="text/css" href="css/button.css">
 		<style>
-		
+			.button_del {
+				border: 2px solid #FF3333;
+			}
+			.button_del:hover {
+				background-color: #FF3333;
+				color: white;
+			}
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
@@ -17,7 +23,7 @@
 	</header>
 	<body>
 		</p>
-		<table align='center' width='30%'>
+		<table align='center' width='90%'>
 			
 			<?php
 				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary`");
@@ -27,8 +33,19 @@
 				}else{
 			?>
 					<tr>
-						<th width="50%">學號</th>
-						<th width="50%">填寫時間</th>
+						<th>學生帳號</th>
+						<th>心情</th>
+						<th>天氣</th>
+						<th>和誰在一起</th>
+						<th>發生時間</th>
+						<th>最近發生什麼事?</th>
+						<th>我當時的想法</th>
+						<th>這件事有什麼新的想法</th>
+						<th>我應該要怎麼樣處理這件事</th>
+						<th>生氣時間</th>
+						<th>給自己的分數</th>
+						<th>填寫時間</th>
+						<th></th>
 					</tr>	
 			<?php
 				}
@@ -36,9 +53,26 @@
 					echo "
 						<tr>
 							<td>$sel_diary_ok[student_id]</td>
-							<td>$sel_diary_ok[write_time]</td>
+							<td>$sel_diary_ok[mood]</td>
+							<td>$sel_diary_ok[weather]</td>
+							<td>$sel_diary_ok[person]</td>
+							<td>$sel_diary_ok[time]</td>
+							<td>$sel_diary_ok[content]</td>
+							<td>$sel_diary_ok[content2]</td>
+							<td>$sel_diary_ok[content3]</td>
+							<td>$sel_diary_ok[content4]</td>
+							<td>$sel_diary_ok[write_time_start]至$sel_diary_ok[write_time_end]</td>
+							<td>$sel_diary_ok[fraction]</td>
+							<td>$sel_diary_ok[write_diary_time]</td>
+							<td><button class='button button_del' onclick=\"show_apphistory('mood_diary_del.php?id=$sel_diary_ok[diary_id]')\"><b>刪除</b></button></td>
 						</tr>
 					";
+					/*echo "			
+							<td>
+								<button class='button' onclick=\"show('mood_diary_data.php?id=$sel_diary_ok[diary_id]')\"><b>詳細資料</b></button>
+							</td>
+						</tr>
+					";*/
 				}
 			?>
 		</table>
