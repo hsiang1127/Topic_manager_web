@@ -26,7 +26,7 @@
 				var x=document.getElementById("species").value;
 				var user=document.getElementById("user").value;
 				var password=document.getElementById("password").value;
-				var child=document.getElementById("child").value;
+				//var child=document.getElementById("child").value;
 				if(user==""){
 					alert('帳號未輸入!!');
 					return false;
@@ -36,12 +36,13 @@
 					return false;
 				}
 				if(x=="parent"){
-					if(child==""){
+					/*if(child==""){
 						alert('小孩學號未輸入!!');
 						return false;
 					}else{
-						window.location.href="user_ins_ok.php?user="+user+"&password="+password+"&child="+child+"&x="+x;
-					}
+						window.location.href="user_ins_ok.php?user="+user+"&password="+password+"&name="+name+"&child="+child+"&x="+x;
+					}*/
+					window.location.href="user_ins_ok.php?user="+user+"&password="+password+"&name="+name+"&x="+x;
 				}else{
 					window.location.href="user_ins_ok.php?user="+user+"&password="+password+"&x="+x;
 				}
@@ -69,10 +70,22 @@
 				<th>密碼</th>
 				<td><input type='text' id='password' name='password'></td>
 			</tr>
-			<tr id='child_tr' style="display: none;">
-				<th>小孩</th>
-				<td><input type='text' id='child' name='child'></td>
-			</tr>
+			<!--<tr id='child_tr' style="display: none;">
+				<th>子女</th>
+				
+				<td>-->
+					<!--使用html的datalist實現-->
+			<!--	<input list="ice-cream-flavors" id="child" name="child" />
+					<datalist id="ice-cream-flavors">
+					<?php
+						/*$selstu=mysqli_query($conn,"select * from `student`");
+						while($selstu_ok=mysqli_fetch_array($selstu)){
+							echo "<option value=\"$selstu_ok[student_id]\">";
+						}*/
+					?>
+					</datalist>
+				</td>
+			</tr>-->
 			<tr>
 				<td colspan='2'><button class='button' id='ins' name='ins' onclick="userins();"><b>確認新增</b></button></td>
 			</tr>
