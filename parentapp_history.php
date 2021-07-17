@@ -33,6 +33,9 @@
 				}else if($_SESSION['url']=="adaptation_scale_pw"){
 					echo "<script>show_apphistory('adaptation_scale_pw.php');</script>";
 					$_SESSION["url"]="";
+				}else if($_SESSION['url']=="interactive_scale_w"){
+					echo "<script>show_apphistory('interactive_scale_w.php');</script>";
+					$_SESSION["url"]="";
 				}
 			}
 		?>
