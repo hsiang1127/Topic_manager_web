@@ -60,7 +60,7 @@
 					echo "<script>show('user_management.php');</script>";
 				}else if($_SESSION["url"]=="mood_thermometer" || $_SESSION["url"]=="adaptation_scale_sw" || $_SESSION["url"]=="diary"|| $_SESSION["url"]=="play"|| $_SESSION["url"]=="video"){
 					echo "<script>show('studentapp_history.php');</script>";
-				}else if($_SESSION["url"]=="mood_disorders_scale"){
+				}else if($_SESSION["url"]=="mood_disorders_scale" || $_SESSION['url']=="adaptation_scale_pw"){
 					echo "<script>show('parentapp_history.php');</script>";
 				}
 				

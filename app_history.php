@@ -38,8 +38,8 @@
 		?>
 		</p>
 		<center>
-			<button class='button' id='teacher' name='teacher' onclick="show('studentapp_history.php')"><b>學生端</b></button>
-			<button class='button' id='teacher' name='teacher' onclick="show('parentapp_history.php')"><b>家長端</b></button>
+			<button class='button' onclick="show('studentapp_history.php')"><b>學生端</b></button>
+			<button class='button' onclick="show('parentapp_history.php')"><b>家長端</b></button>
 		</center>
 		</p>
 	</body>

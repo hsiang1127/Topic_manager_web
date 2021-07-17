@@ -30,8 +30,9 @@
 				if($_SESSION["url"]=="mood_disorders_scale"){
 					echo "<script>show_apphistory('mood_disorders_scale_w.php');</script>";
 					$_SESSION["url"]="";
-				}else{
-					
+				}else if($_SESSION['url']=="adaptation_scale_pw"){
+					echo "<script>show_apphistory('adaptation_scale_pw.php');</script>";
+					$_SESSION["url"]="";
 				}
 			}
 		?>
