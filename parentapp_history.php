@@ -26,19 +26,18 @@
 	</style>
 	<body>
 		<?php
-			/*if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
-				if($_SESSION["url"]=="s"){
-					echo "<script>show_apphistory('student_management.php');</script>";
+			if(isset($_SESSION["url"])&& $_SESSION["url"]!=""){
+				if($_SESSION["url"]=="mood_disorders_scale"){
+					echo "<script>show_apphistory('mood_disorders_scale_w.php');</script>";
 					$_SESSION["url"]="";
 				}else{
-					echo "<script>show_apphistory('parent_management.php');</script>";
-					$_SESSION["url"]="";
+					
 				}
-			}*/
+			}
 		?>
 		</p>
 		<center>
-			<button class='button' id='teacher' name='teacher' onclick="show_apphistory('mood_disorders_scale_w.php')"><b>孩子的情緒行為填寫紀錄</b></button>
+			<button class='button' id='teacher' name='teacher' onclick="show_apphistory('mood_disorders_scale_w.php')"><b>孩子的行為填寫紀錄</b></button>
 			<button class='button' id='teacher' name='teacher' onclick="show_apphistory('adaptation_scale_pw.php')"><b>孩子最近的表現填寫紀錄</b></button>
 			<button class='button' id='teacher' name='teacher' onclick="show_apphistory('interactive_scale_w.php')"><b>與孩子的互動填寫紀錄</b></button>
 		</center>
