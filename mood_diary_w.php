@@ -26,7 +26,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary`");
+				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `write_diary_time`");
 				$n = mysqli_num_rows($sel_diary);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
