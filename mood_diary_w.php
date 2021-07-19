@@ -26,7 +26,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `write_diary_time` desc");
+				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`number`");
 				$n = mysqli_num_rows($sel_diary);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -45,6 +45,7 @@
 						<th>生氣時間</th>
 						<th>給自己的分數</th>
 						<th>填寫時間</th>
+						<th>次數</th>
 						<th></th>
 					</tr>	
 			<?php
@@ -61,6 +62,7 @@
 							<td>$sel_diary_ok[content2]</td>
 							<td>$sel_diary_ok[content3]</td>
 							<td>$sel_diary_ok[content4]</td>
+							<td>$sel_diary_ok[number]</td>
 							<td>
 					";
 							echo (strtotime($sel_diary_ok['write_time_end']) - strtotime($sel_diary_ok['write_time_start']))/ (60);
