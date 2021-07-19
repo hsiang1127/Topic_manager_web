@@ -37,7 +37,7 @@
 				<th>姓名</th>
 				<th>性別</th>
 				<th>生日</th>
-				<th"></th>
+				<th></th>
 			</tr>
 			<?php
 				$sel_student=mysqli_query($conn,"SELECT `s`.*,`r`.`student_id` as `r_student_id` FROM `student` as `s` 
