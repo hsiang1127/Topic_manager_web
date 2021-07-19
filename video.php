@@ -51,7 +51,7 @@
 					echo "
 						<tr>
 							<td>$sel_video_ok[student_id]</td>
-							<td><a href='$sel_video_ok[video_url]'>影片連結</a></td>
+							<td><a href='$sel_video_ok[video_url]' target='_blank'>影片連結</a></td>
 							<td>$sel_video_ok[write_time]</td>
 							<td>
 								<button class='button button_del' onclick=\"show('video_del.php?id=$sel_video_ok[video_id]')\"><b>刪除</b></button>
