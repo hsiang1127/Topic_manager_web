@@ -32,9 +32,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 72%; 
+				left: 75%; 
 				width: 20%; 
-				height: 40%; 
+				height: 50%; 
 				padding: 20px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -45,9 +45,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 35%; 
-				width: 13%; 
-				height: 3%; 
+				left: 31%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -58,9 +58,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 37%; 
-				width: 16%; 
-				height: 3%; 
+				left: 33.6%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -71,9 +71,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 39%; 
-				width: 14%; 
-				height: 3%; 
+				left: 36.3%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -84,9 +84,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 41%; 
-				width: 12%; 
-				height: 3%; 
+				left: 39%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -97,9 +97,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 43%; 
-				width: 15%; 
-				height: 3%; 
+				left: 41.6%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -110,9 +110,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 45%; 
-				width: 13%; 
-				height: 3%; 
+				left: 44.5%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -124,8 +124,8 @@
 				position: absolute; 
 				top: 23%; 
 				left: 47%; 
-				width: 18%; 
-				height: 3%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -136,9 +136,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 49%; 
-				width: 14%; 
-				height: 3%; 
+				left: 49.5%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -149,9 +149,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 51%; 
-				width: 13%; 
-				height: 3%; 
+				left: 52.3%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -162,9 +162,9 @@
 				display: none; 
 				position: absolute; 
 				top: 23%; 
-				left: 53%; 
-				width: 14%; 
-				height: 3%; 
+				left: 55%; 
+				width: 20%; 
+				height: 4%; 
 				padding: 5px; 
 				border: 5px solid #FFBB66; 
 				background-color: #FFF6CC; 
@@ -183,10 +183,10 @@
 			量表數值　1-總是這樣　2-經常這樣　3-有時這樣　4-很少這樣　5-從不這樣　
 			<button class='button' onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><b>量表題目</b></button>
 		<h3>
-		<table align='center' width='40%'>
+		<table align='center' width='50%'>
 			
 			<?php
-				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `write_time` desc");
+				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`number`");
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -205,6 +205,7 @@
 						<th onMouseOver="document.getElementById('light9').style.display='block';document.getElementById('fade').style.display='block'" onMouseOut="document.getElementById('light9').style.display='none';document.getElementById('fade').style.display='none'">Q9</th>
 						<th onMouseOver="document.getElementById('light10').style.display='block';document.getElementById('fade').style.display='block'" onMouseOut="document.getElementById('light10').style.display='none';document.getElementById('fade').style.display='none'">Q10</th>
 						<th>填寫時間</th>
+						<th>次數</th>
 						<th></th>
 					</tr>
 			<?php		
@@ -224,6 +225,7 @@
 							<td>$sel_adaptation_ok[q9]</td>
 							<td>$sel_adaptation_ok[q10]</td>
 							<td>$sel_adaptation_ok[write_time]</td>
+							<td>$sel_adaptation_ok[number]</td>
 							<td><button class='button button_del' onclick=\"show('adaptation_scale_sdata_del.php?id=$sel_adaptation_ok[w_scale_id]')\"><b>刪除</b></button></td>
 						</tr>	
 					";
