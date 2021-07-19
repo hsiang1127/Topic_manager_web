@@ -23,7 +23,7 @@
 	</header>
 	<body>
 		</p>
-		<table align='center' width='90%'>
+		<table align='center' width='95%'>
 			
 			<?php
 				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`number`");
@@ -62,7 +62,6 @@
 							<td>$sel_diary_ok[content2]</td>
 							<td>$sel_diary_ok[content3]</td>
 							<td>$sel_diary_ok[content4]</td>
-							<td>$sel_diary_ok[number]</td>
 							<td>
 					";
 							echo (strtotime($sel_diary_ok['write_time_end']) - strtotime($sel_diary_ok['write_time_start']))/ (60);
@@ -70,6 +69,7 @@
 							分鐘</td>
 							<td>$sel_diary_ok[fraction]</td>
 							<td>$sel_diary_ok[write_diary_time]</td>
+							<td>$sel_diary_ok[number]</td>
 							<td><button class='button button_del' onclick=\"show_apphistory('mood_diary_del.php?id=$sel_diary_ok[diary_id]')\"><b>刪除</b></button></td>
 						</tr>
 					";
