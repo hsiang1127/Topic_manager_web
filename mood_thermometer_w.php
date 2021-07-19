@@ -26,7 +26,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `write_time` desc");
+				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`number`");
 				$n = mysqli_num_rows($sel_mood_thermometer);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -41,6 +41,7 @@
 						<th>可以冷靜的方法</th>
 						<th>結束時心情指數</th>
 						<th>填寫時間</th>
+						<th>次數</th>
 						<th></th>
 					</tr>	
 			<?php
@@ -56,6 +57,7 @@
 							<td>$sel_mood_thermometer_ok[tmmt_calmidea]</td>
 							<td>$sel_mood_thermometer_ok[tmmt_mood3]</td>
 							<td>$sel_mood_thermometer_ok[write_time]</td>
+							<td>$sel_mood_thermometer_ok[number]</td>
 							<td>
 								<button class='button button_del' onclick=\"location.href='mood_thermometer_del.php?id=$sel_mood_thermometer_ok[tmmt_id]'\"><b>刪除</b></button>
 							</td>
