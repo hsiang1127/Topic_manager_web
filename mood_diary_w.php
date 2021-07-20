@@ -55,10 +55,10 @@
 				$number=1;
 				while($sel_diary_ok=mysqli_fetch_array($sel_diary)){
 					if($user==""){
-						$user=$sel_adaptation_ok['student_id'];
-						$user_ok=$sel_adaptation_ok['student_id'];
+						$user=$sel_diary_ok['student_id'];
+						$user_ok=$sel_diary_ok['student_id'];
 					}else{
-						$user_ok=$sel_adaptation_ok['student_id'];
+						$user_ok=$sel_diary_ok['student_id'];
 					}
 					echo "
 						<tr>

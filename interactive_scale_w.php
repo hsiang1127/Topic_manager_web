@@ -159,10 +159,10 @@
 				$number=1;
 				while($sel_interactive_scale_w_ok=mysqli_fetch_array($sel_interactive_scale_w)){
 					if($user==""){
-						$user=$sel_adaptation_ok['parent_id'];
-						$user_ok=$sel_adaptation_ok['parent_id'];
+						$user=$sel_interactive_scale_w_ok['parent_id'];
+						$user_ok=$sel_interactive_scale_w_ok['parent_id'];
 					}else{
-						$user_ok=$sel_adaptation_ok['parent_id'];
+						$user_ok=$sel_interactive_scale_w_ok['parent_id'];
 					}
 					echo "
 						<tr>

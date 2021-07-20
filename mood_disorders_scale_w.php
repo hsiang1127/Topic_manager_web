@@ -467,10 +467,10 @@
 				$number=1;
 				while($sel_mood_disorders_scale_ok=mysqli_fetch_array($sel_mood_disorders_scale)){
 					if($user==""){
-						$user=$sel_adaptation_ok['parent_id'];
-						$user_ok=$sel_adaptation_ok['parent_id'];
+						$user=$sel_mood_disorders_scale_ok['parent_id'];
+						$user_ok=$sel_mood_disorders_scale_ok['parent_id'];
 					}else{
-						$user_ok=$sel_adaptation_ok['parent_id'];
+						$user_ok=$sel_mood_disorders_scale_ok['parent_id'];
 					}
 					echo "
 						<tr>

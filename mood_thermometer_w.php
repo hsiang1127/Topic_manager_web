@@ -51,10 +51,10 @@
 				$number=1;
 				while($sel_mood_thermometer_ok=mysqli_fetch_array($sel_mood_thermometer)){
 					if($user==""){
-						$user=$sel_adaptation_ok['student_id'];
-						$user_ok=$sel_adaptation_ok['student_id'];
+						$user=$sel_mood_thermometer_ok['student_id'];
+						$user_ok=$sel_mood_thermometer_ok['student_id'];
 					}else{
-						$user_ok=$sel_adaptation_ok['student_id'];
+						$user_ok=$sel_mood_thermometer_ok['student_id'];
 					}
 					echo "
 						<tr>
