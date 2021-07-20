@@ -26,7 +26,7 @@
 		<table align='center' width='95%'>
 			
 			<?php
-				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`number`");
+				$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`write_diary_time`");
 				$n = mysqli_num_rows($sel_diary);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -50,7 +50,16 @@
 					</tr>	
 			<?php
 				}
+				$user="";
+				$user_ok="";
+				$number=1;
 				while($sel_diary_ok=mysqli_fetch_array($sel_diary)){
+					if($user==""){
+						$user=$sel_adaptation_ok['student_id'];
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}else{
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}
 					echo "
 						<tr>
 							<td>$sel_diary_ok[student_id]</td>
@@ -69,7 +78,17 @@
 							分鐘</td>
 							<td>$sel_diary_ok[fraction]</td>
 							<td>$sel_diary_ok[write_diary_time]</td>
-							<td>$sel_diary_ok[number]</td>
+					";
+							if($user_ok==$user){
+								echo "<td>$number</td>";
+								$number++;
+							}else{
+								$number=1;
+								echo "<td>$number</td>";
+								$number++;
+								$user=$user_ok;
+							}
+					echo "
 							<td><button class='button button_del' onclick=\"show_apphistory('mood_diary_del.php?id=$sel_diary_ok[diary_id]')\"><b>刪除</b></button></td>
 						</tr>
 					";
