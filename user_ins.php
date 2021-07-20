@@ -76,10 +76,10 @@
 				<th>密碼</th>
 				<td><input type='text' id='password' name='password'></td>
 			</tr>
-			<tr id='child_tr' style="display: none;">
+			<tr id='child_tr' style="display: table-row;">
 				<th>間隔</th>
 				<td>
-					<td><input type='number' id='child' name='child'></td>
+					<input type='number' id='child' name='child'>
 					<!--使用html的datalist實現-->
 					<!--<input list="ice-cream-flavors" id="child" name="child" />
 					<datalist id="ice-cream-flavors">-->
