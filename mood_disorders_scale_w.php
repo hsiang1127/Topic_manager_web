@@ -420,7 +420,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_mood_disorders_scale=mysqli_query($conn,"SELECT * FROM `mood_disorders_scale_w` ORDER BY `parent_id`,`number`");
+				$sel_mood_disorders_scale=mysqli_query($conn,"SELECT * FROM `mood_disorders_scale_w` ORDER BY `parent_id`,`write_time`");
 				$n = mysqli_num_rows($sel_mood_disorders_scale);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -462,7 +462,16 @@
 					</tr>
 			<?php		
 				}
+				$user="";
+				$user_ok="";
+				$number=1;
 				while($sel_mood_disorders_scale_ok=mysqli_fetch_array($sel_mood_disorders_scale)){
+					if($user==""){
+						$user=$sel_adaptation_ok['parent_id'];
+						$user_ok=$sel_adaptation_ok['parent_id'];
+					}else{
+						$user_ok=$sel_adaptation_ok['parent_id'];
+					}
 					echo "
 						<tr>
 							<td>$sel_mood_disorders_scale_ok[parent_id]</td>
@@ -494,7 +503,17 @@
 							<td>$sel_mood_disorders_scale_ok[q26]</td>
 							<td>$sel_mood_disorders_scale_ok[q27]</td>
 							<td>$sel_mood_disorders_scale_ok[q28]</td>
-							<td>$sel_mood_disorders_scale_ok[write_time]</td>
+					";
+							if($user_ok==$user){
+								echo "<td>$number</td>";
+								$number++;
+							}else{
+								$number=1;
+								echo "<td>$number</td>";
+								$number++;
+								$user=$user_ok;
+							}
+					echo "
 							<td>$sel_mood_disorders_scale_ok[number]</td>
 							<td><button class='button button_del' onclick=\"show('mood_disorders_scale_data_del.php?id=$sel_mood_disorders_scale_ok[w_scale_id]')\"><b>刪除</b></button></td>
 						</tr>	

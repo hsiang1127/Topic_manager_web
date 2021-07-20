@@ -134,7 +134,7 @@
 		<table align='center' width='50%'>
 			
 			<?php
-				$sel_interactive_scale_w=mysqli_query($conn,"SELECT * FROM `interactive_scale_w` ORDER BY `parent_id`,`number`");
+				$sel_interactive_scale_w=mysqli_query($conn,"SELECT * FROM `interactive_scale_w` ORDER BY `parent_id`,`write_time`");
 				$n = mysqli_num_rows($sel_interactive_scale_w);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -154,7 +154,16 @@
 					</tr>
 			<?php		
 				}
+				$user="";
+				$user_ok="";
+				$number=1;
 				while($sel_interactive_scale_w_ok=mysqli_fetch_array($sel_interactive_scale_w)){
+					if($user==""){
+						$user=$sel_adaptation_ok['parent_id'];
+						$user_ok=$sel_adaptation_ok['parent_id'];
+					}else{
+						$user_ok=$sel_adaptation_ok['parent_id'];
+					}
 					echo "
 						<tr>
 							<td>$sel_interactive_scale_w_ok[parent_id]</td>
@@ -165,7 +174,17 @@
 							<td>$sel_interactive_scale_w_ok[q5]</td>
 							<td>$sel_interactive_scale_w_ok[q6]</td>
 							<td>$sel_interactive_scale_w_ok[write_time]</td>
-							<td>$sel_interactive_scale_w_ok[number]</td>
+					";
+							if($user_ok==$user){
+								echo "<td>$number</td>";
+								$number++;
+							}else{
+								$number=1;
+								echo "<td>$number</td>";
+								$number++;
+								$user=$user_ok;
+							}
+					echo "		
 							<td><button class='button button_del' onclick=\"show('interactive_scale_data_del.php?id=$sel_interactive_scale_w_ok[w_scale_id]')\"><b>刪除</b></button></td>
 						</tr>	
 					";
