@@ -26,7 +26,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`number`");
+				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
 				$n = mysqli_num_rows($sel_mood_thermometer);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -46,7 +46,16 @@
 					</tr>	
 			<?php
 				}
+				$user="";
+				$user_ok="";
+				$number=1;
 				while($sel_mood_thermometer_ok=mysqli_fetch_array($sel_mood_thermometer)){
+					if($user==""){
+						$user=$sel_adaptation_ok['student_id'];
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}else{
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}
 					echo "
 						<tr>
 							<td>$sel_mood_thermometer_ok[student_id]</td>
@@ -57,7 +66,17 @@
 							<td>$sel_mood_thermometer_ok[tmmt_calmidea]</td>
 							<td>$sel_mood_thermometer_ok[tmmt_mood3]</td>
 							<td>$sel_mood_thermometer_ok[write_time]</td>
-							<td>$sel_mood_thermometer_ok[number]</td>
+					";
+						if($user_ok==$user){
+							echo "<td>$number</td>";
+							$number++;
+						}else{
+							$number=1;
+							echo "<td>$number</td>";
+							$number++;
+							$user=$user_ok;
+						}
+					echo "
 							<td>
 								<button class='button button_del' onclick=\"location.href='mood_thermometer_del.php?id=$sel_mood_thermometer_ok[tmmt_id]'\"><b>刪除</b></button>
 							</td>
