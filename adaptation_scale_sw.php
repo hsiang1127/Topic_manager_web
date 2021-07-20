@@ -186,7 +186,7 @@
 		<table align='center' width='50%'>
 			
 			<?php
-				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`number`");
+				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`write_time`");
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -210,7 +210,16 @@
 					</tr>
 			<?php		
 				}
+				$user="";
+				$user_ok="";
+				$number=1;
 				while($sel_adaptation_ok=mysqli_fetch_array($sel_adaptation)){
+					if($user==""){
+						$user=$sel_adaptation_ok['student_id'];
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}else{
+						$user_ok=$sel_adaptation_ok['student_id'];
+					}
 					echo "
 						<tr>
 							<td>$sel_adaptation_ok[student_id]</td>
@@ -225,7 +234,17 @@
 							<td>$sel_adaptation_ok[q9]</td>
 							<td>$sel_adaptation_ok[q10]</td>
 							<td>$sel_adaptation_ok[write_time]</td>
-							<td>$sel_adaptation_ok[number]</td>
+					";
+							if($user_ok==$user){
+								echo "<td>$number</td>";
+								$number++;
+							}else{
+								$number=1;
+								echo "<td>$number</td>";
+								$number++;
+								$user=$user_ok;
+							}
+					echo"		
 							<td><button class='button button_del' onclick=\"show('adaptation_scale_sdata_del.php?id=$sel_adaptation_ok[w_scale_id]')\"><b>刪除</b></button></td>
 						</tr>	
 					";
