@@ -503,6 +503,7 @@
 							<td>$sel_mood_disorders_scale_ok[q26]</td>
 							<td>$sel_mood_disorders_scale_ok[q27]</td>
 							<td>$sel_mood_disorders_scale_ok[q28]</td>
+							<td>$sel_mood_disorders_scale_ok[write_time]</td>
 					";
 							if($user_ok==$user){
 								echo "<td>$number</td>";
@@ -514,7 +515,6 @@
 								$user=$user_ok;
 							}
 					echo "
-							<td>$sel_mood_disorders_scale_ok[number]</td>
 							<td><button class='button button_del' onclick=\"show('mood_disorders_scale_data_del.php?id=$sel_mood_disorders_scale_ok[w_scale_id]')\"><b>刪除</b></button></td>
 						</tr>	
 					";
