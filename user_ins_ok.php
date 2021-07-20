@@ -4,7 +4,7 @@
 	$x=$_GET['x'];
 	if($x=="student"){
 		//$sql="INSERT INTO `student`(`student_id`, `password`, `student_name`, `student_year`, `student_class`, `mom_year`, `father_year`, `birthday`, `sex`) VALUES ('$_GET[user]','$_GET[password]','','','','','','','')";
-		$sql="INSERT INTO `student`(`user_id`, `password`) VALUES ('$_GET[user]','$_GET[password]')";
+		$sql="INSERT INTO `student`(`user_id`, `password`,`	adaptation_scale`) VALUES ('$_GET[user]','$_GET[password]','$_GET[child]')";
 		$ins=mysqli_query($conn,$sql);
 		if($ins){
 			header("Location:main.php");
