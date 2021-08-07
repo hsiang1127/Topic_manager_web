@@ -128,7 +128,7 @@
 	<body>
 		</p>
 		<h3 align='center' style="">
-			量表數值　1-總是這樣　2-經常這樣　3-有時這樣　4-很少這樣　5-從不這樣　
+			量表數值　1-從不這樣　2-很少這樣　3-有時這樣　4-經常這樣　5-總是這樣　
 			<button class='button' onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><b>量表題目</b></button>
 		<h3>
 		<table align='center' width='50%'>
