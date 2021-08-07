@@ -205,7 +205,7 @@
 			<?php
 				$selstu=mysqli_query($conn,"select * from `student`");
 				while($selstu_ok=mysqli_fetch_array($selstu)){
-					echo "<option value=\"$selstu_ok[id]\">";
+					echo "<option value=\"$selstu_ok[user_id]\">";
 				}
 			?>
 			</datalist>
