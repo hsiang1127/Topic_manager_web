@@ -32,7 +32,7 @@
 		</p>
 		<table align='center' width='55%'>
 			<?php
-				$sel_play_history=mysqli_query($conn,"select * from `play_history` ORDER BY `student_id`,`play_time`");
+				$sel_play_history=mysqli_query($conn,"select * from `play_history` ORDER BY `play_date` ASC ");
 				$n = mysqli_num_rows($sel_play_history);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
