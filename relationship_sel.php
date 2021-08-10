@@ -81,8 +81,20 @@
 						echo "
 							</tr>
 							<tr>
+								<th>藥物</th>
+								<td>$sel_parent_ok[drug]</td>
+							</tr>
+							<tr>
 								<th>家中收入來源</th>
 								<td>$sel_parent_ok[income]</td>
+							</tr>
+							<tr>
+								<th>父親教育程度</th>
+								<td>$sel_parent_ok[f_educate]</td>
+							</tr>
+							<tr>
+								<th>母親教育程度</th>
+								<td>$sel_parent_ok[m_educate]</td>
 							</tr>
 							<tr>
 								<td colspan='2'>
