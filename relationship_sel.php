@@ -32,7 +32,7 @@
 		</p>
 		<table align='center' width='30%'>
 			<?php
-				$sel_parent=mysqli_query($conn,"SELECT `s`.*,`r`.`rlts_id`,`r`.`parent_id`,`r`.`student_id` as `r_student_id`,`r`.`relationship`,`r`.`cohabitation`,`r`.`discipline`,`r`.`home_order`,`r`.`brothers_sisters`,`r`.`income` FROM `student` as `s` 
+				$sel_parent=mysqli_query($conn,"SELECT `s`.*,`r`.`rlts_id`,`r`.`parent_id`,`r`.`student_id` as `r_student_id`,`r`.`relationship`,`r`.`cohabitation`,`r`.`discipline`,`r`.`home_order`,`r`.`brothers_sisters`,`r`.`drug`,`r`.`income`,`r`.`f_educate`,`r`.`m_educate` FROM `student` as `s` 
 												LEFT JOIN `relationship` as `r` on `r`.`student_id`=`s`.`user_id`
 												where `s`.`user_id`='$_GET[id]'");
 												
