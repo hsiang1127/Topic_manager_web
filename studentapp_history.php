@@ -47,7 +47,9 @@
 		?>
 		</p>
 		<center>
-			<button class='button' id='btu1' name='btu1' onclick="show_apphistory('adaptation_scale_sw.php')"><b>社會適應量表填寫紀錄</b></button>
+			<button class='button' id='btu1' name='btu1' onclick="show_apphistory('adaptation_scale_sw.php')"><b>社會適應量表填寫紀錄(總)</b></button>
+			<button class='button' id='btu1' name='btu1' onclick="show_apphistory('adaptation_scale_first.php')"><b>社會適應量表填寫紀錄(初)</b></button>
+			<button class='button' id='btu1' name='btu1' onclick="show_apphistory('adaptation_scale_sw.php')"><b>社會適應量表填寫紀錄(末)</b></button>
 			<button class='button' id='btu2' name='btu2' onclick="show_apphistory('mood_thermometer_w.php')"><b>情緒溫度計填寫紀錄</b></button>
 			<button class='button' id='btu3' name='btu3' onclick="show_apphistory('mood_diary_w.php')"><b>心情日記寫紀錄</b></button>
 			<button class='button' id='btu4' name='btu4' onclick="show_apphistory('play_history.php')"><b>遊戲遊玩紀錄</b></button>
