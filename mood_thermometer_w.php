@@ -94,7 +94,7 @@
 		</table>
 		<?php
 			//查詢資料筆數
-			$sel_number=mysqli_query($conn,"select * from `SELECT * FROM `mood_thermometer`");
+			$sel_number=mysqli_query($conn,"SELECT * FROM `mood_thermometer`");
 			$data_number=mysqli_num_rows($sel_number);
 			if($data_number!=0){
 				$data_number_remove=intval($data_number/10);
