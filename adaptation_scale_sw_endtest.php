@@ -183,9 +183,9 @@
 				}
 				var stu=document.getElementById("stu").value;
 				if(stu==""){
-					show_apphistory('adaptation_scale_sw_first.php?n='+s1);
+					show_apphistory('adaptation_scale_sw_endtest.php?n='+s1);
 				}else if(stu!=""){
-					show_apphistory('adaptation_scale_sw_first.php?stu='+stu+"&n="+s1);
+					show_apphistory('adaptation_scale_sw_endtest.php?stu='+stu+"&n="+s1);
 				}
 			}
 		</script>
@@ -343,9 +343,11 @@
 		</table>
 		<?php
 			if(isset($_GET['stu'])){
-				$sel_number=mysqli_query($conn,"select *,min(`write_time`) from `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='$_GET[stu]'");
+				/*$sel_number=mysqli_query($conn,"select *,min(`write_time`) from `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='$_GET[stu]'");*/
+				$sel_number=mysqli_query($conn,"SELECT * from(SELECT *,max(`write_time`) as `max`,count(`student_id`) as `n` FROM `adaptation_scale_w` where `student_id`<>\"\"  and `student_id`='".$_GET['stu']."' GROUP BY `student_id` ORDER BY `student_id`)as `sel1` WHERE `n`>1 ");
 			}else{
-				$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id`");
+				/*$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id`");*/
+				$sel_number=mysqli_query($conn,"SELECT * from(SELECT *,max(`write_time`) as `max`,count(`student_id`) as `n` FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`)as `sel1` WHERE `n`>1 ");
 			}
 			//查詢資料筆數
 			//$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\"");
