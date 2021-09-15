@@ -218,7 +218,7 @@
 			
 			<?php
 				if(!isset($_GET['n']) && !isset($_GET['stu'])){
-					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`write_time` limit 10");
+					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min` FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`,`write_time` limit 10");
 				}else if(isset($_GET['n']) && !isset($_GET['stu'])){
 					$n=($_GET['n']*10)-10;
 					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`write_time` limit ".$n.",10");
