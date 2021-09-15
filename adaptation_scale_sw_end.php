@@ -183,9 +183,9 @@
 				}
 				var stu=document.getElementById("stu").value;
 				if(stu==""){
-					show_apphistory('adaptation_scale_sw_first.php?n='+s1);
+					show_apphistory('adaptation_scale_sw_end.php?n='+s1);
 				}else if(stu!=""){
-					show_apphistory('adaptation_scale_sw_first.php?stu='+stu+"&n="+s1);
+					show_apphistory('adaptation_scale_sw_end.php?stu='+stu+"&n="+s1);
 				}
 			}
 		</script>
