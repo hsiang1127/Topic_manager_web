@@ -25,12 +25,13 @@
 				}else{
 					s1=1;
 				}
-				var stu=document.getElementById("stu").value;
+				/*var stu=document.getElementById("stu").value;
 				if(stu==""){
 					show_apphistory('mood_thermometer_w.php?n='+s1);
 				}else if(stu!=""){
 					show_apphistory('mood_thermometer_w.php?stu='+stu+"&n="+s1);
-				}
+				}*/
+				show_apphistory('mood_thermometer_w.php?n='+s1);
 			}
 		</script>
 	</header>
