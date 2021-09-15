@@ -43,7 +43,8 @@
 				if(!isset($_GET['n'])){
 					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit 0,10");
 				}else{
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit ".$_GET['n'].",10");
+					$n=($_GET['n']*10)-10;
+					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit ".$n.",10");
 				}
 				//$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
 				$n = mysqli_num_rows($sel_mood_thermometer);
