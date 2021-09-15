@@ -40,7 +40,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				if(isset($_GET['n'])){
+				if(!isset($_GET['n'])){
 					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit 0,10");
 				}else{
 					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit ".$n.",10");
