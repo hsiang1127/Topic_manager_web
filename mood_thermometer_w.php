@@ -25,13 +25,12 @@
 				}else{
 					s1=1;
 				}
-				/*var stu=document.getElementById("stu").value;
+				var stu=document.getElementById("stu").value;
 				if(stu==""){
 					show_apphistory('mood_thermometer_w.php?n='+s1);
 				}else if(stu!=""){
 					show_apphistory('mood_thermometer_w.php?stu='+stu+"&n="+s1);
-				}*/
-				show_apphistory('mood_thermometer_w.php?n='+s1);
+				}
 			}
 		</script>
 	</header>
@@ -40,20 +39,7 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				if(!isset($_GET['n']) && !isset($_GET['stu'])){
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer`  ORDER BY `student_id`,`write_time` limit 10");
-				}else if(isset($_GET['n']) && !isset($_GET['stu'])){
-					$n=($_GET['n']*10)-10;
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer`  ORDER BY `student_id`,`write_time` limit '"$n"',10");
-				}else if(!isset($_GET['n']) && isset($_GET['stu'])){
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` where `student_id`='".$_GET['stu']."'  ORDER BY `student_id`,`write_time` limit 10");
-				}else if(isset($_GET['n']) && isset($_GET['stu'])){
-					$n=($_GET['n']*10)-10;
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` where `student_id`='".$_GET['stu']."'  ORDER BY `student_id`,`write_time` limit ".$n.",10");
-				}else if($_GET['stu']==""){
-					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer`  ORDER BY `student_id`,`write_time` limit 10");
-				}
-				//$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
+				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
 				$n = mysqli_num_rows($sel_mood_thermometer);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
