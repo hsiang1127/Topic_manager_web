@@ -279,7 +279,7 @@
 									<td>$sel_adaptation_ok[q8]</td>
 									<td>$sel_adaptation_ok[q9]</td>
 									<td>$sel_adaptation_ok[q10]</td>
-									<td>$sel_adaptation_ok[min]</td>
+									<td>$sel_adaptation_ok[max]</td>
 							";
 									if($user_ok==$user){
 										echo "<td>$number</td>";
