@@ -221,14 +221,14 @@
 					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min` FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`,`write_time` limit 10");
 				}else if(isset($_GET['n']) && !isset($_GET['stu'])){
 					$n=($_GET['n']*10)-10;
-					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`write_time` limit ".$n.",10");
+					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min`  FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`,`write_time` limit ".$n.",10");
 				}else if(!isset($_GET['n']) && isset($_GET['stu'])){
-					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='".$_GET['stu']."' ORDER BY `student_id`,`write_time` limit 0,10");
+					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min`  FROM `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='".$_GET['stu']."'  GROUP BY `student_id` ORDER BY `student_id`,`write_time` limit 0,10");
 				}else if(isset($_GET['n']) && isset($_GET['stu'])){
 					$n=($_GET['n']*10)-10;
-					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='".$_GET['stu']."' ORDER BY `student_id`,`write_time` limit ".$n.",10");
+					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min`  FROM `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='".$_GET['stu']."' GROUP BY `student_id`  ORDER BY `student_id`,`write_time` limit ".$n.",10");
 				}else if($_GET['stu']==""){
-					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `student_id`<>\"\" ORDER BY `student_id`,`write_time` limit 10");
+					$sel_adaptation=mysqli_query($conn,"SELECT *,min(`student_id`) as `min`  FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`,`write_time` limit 10");
 				}
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
@@ -278,7 +278,7 @@
 									<td>$sel_adaptation_ok[q8]</td>
 									<td>$sel_adaptation_ok[q9]</td>
 									<td>$sel_adaptation_ok[q10]</td>
-									<td>$sel_adaptation_ok[write_time]</td>
+									<td>$sel_adaptation_ok[min]</td>
 							";
 									if($user_ok==$user){
 										echo "<td>$number</td>";
@@ -310,7 +310,7 @@
 								<td>$sel_adaptation_ok[q8]</td>
 								<td>$sel_adaptation_ok[q9]</td>
 								<td>$sel_adaptation_ok[q10]</td>
-								<td>$sel_adaptation_ok[write_time]</td>
+								<td>$sel_adaptation_ok[min]</td>
 						";
 								if($user_ok==$user){
 									echo "<td>$number</td>";
