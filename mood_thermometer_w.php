@@ -40,7 +40,12 @@
 		<table align='center' width='90%'>
 			
 			<?php
-				$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
+				if(isset($_GET['n'])){
+					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit 0,10");
+				}else{
+					$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time` limit ".$n.",10");
+				}
+				//$sel_mood_thermometer=mysqli_query($conn,"SELECT * FROM `mood_thermometer` ORDER BY `student_id`,`write_time`");
 				$n = mysqli_num_rows($sel_mood_thermometer);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
