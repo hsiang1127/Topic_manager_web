@@ -339,9 +339,9 @@
 		</table>
 		<?php
 			if(isset($_GET['stu'])){
-				$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='$_GET[stu]'");
+				$sel_number=mysqli_query($conn,"select *,min(`student_id`) from `adaptation_scale_w` where `student_id`<>\"\" and `student_id`='$_GET[stu]'");
 			}else{
-				$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\"");
+				$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\" GGROUP BY `student_id`");
 			}
 			//查詢資料筆數
 			//$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `student_id`<>\"\"");
