@@ -34,11 +34,11 @@
 				}
 				/*var stu=document.getElementById("stu").value;
 				if(stu==""){
-					show_apphistory('play_history.php?n='+s1);
+					show_apphistory('video.php?n='+s1);
 				}else if(stu!=""){
-					show_apphistory('play_history.php?stu='+stu+"&n="+s1);
+					show_apphistory('video.php?stu='+stu+"&n="+s1);
 				}*/
-				show_apphistory('play_history.php?n='+s1);
+				show_apphistory('video.php?n='+s1);
 			}
 		</script>
 	</header>
