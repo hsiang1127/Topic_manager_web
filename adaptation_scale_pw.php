@@ -174,7 +174,21 @@
 		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-
+			function qq(){
+				var s1;
+				if(document.getElementById("s1")){
+					s1=document.getElementById("s1").value;
+				}else{
+					s1=1;
+				}
+				/*var stu=document.getElementById("stu").value;
+				if(stu==""){
+					show_apphistory('adaptation_scale_sw.php?n='+s1);
+				}else if(stu!=""){
+					show_apphistory('adaptation_scale_sw.php?stu='+stu+"&n="+s1);
+				}*/
+				show_apphistory('adaptation_scale_pw.php?n='+s1);
+			}
 		</script>
 	</header>
 	<body>
@@ -186,7 +200,13 @@
 		<table align='center' width='50%'>
 			
 			<?php
-				$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `parent_id`<>\"\" ORDER BY `parent_id`,`write_time`");
+				if(isset($_GET['n'])){
+					$n=($_GET['n']*10)-10;
+					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `parent_id`<>\"\" ORDER BY `parent_id`,`write_time` limit ".$n.",10");
+				}else{
+					$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `parent_id`<>\"\" ORDER BY `parent_id`,`write_time` limit 0,10");
+				}
+				//$sel_adaptation=mysqli_query($conn,"SELECT * FROM `adaptation_scale_w` where `parent_id`<>\"\" ORDER BY `parent_id`,`write_time`");
 				$n = mysqli_num_rows($sel_adaptation);
 				if($n==0){
 					echo "<h1 align='center'><font color='#FF3333'>目前無紀錄資料!!</font></h1>";
@@ -256,6 +276,52 @@
 				}
 			?>
 		</table>
+		<?php
+			//查詢資料筆數
+			$sel_number=mysqli_query($conn,"select * from `adaptation_scale_w` where `parent_id`<>\"\"");
+			$data_number=mysqli_num_rows($sel_number);
+			if($data_number!=0){
+				$data_number_remove=intval($data_number/10);
+				$data_number_remain=$data_number%10;
+				$data_number_result=0;
+				//echo "<script>alert('$data_number_remove')</script>";
+				if($data_number_remove<1 && $data_number_remain!=0){
+					$data_number_result=1;
+				}else if($data_number_remove>=1 && $data_number_remain==0){
+					$data_number_result=$data_number_remove;
+				}else if($data_number_remove>=1 && $data_number_remain!=0){
+					$data_number_result=$data_number_remove+1;
+				}
+				echo "
+					<p/>
+				";
+				//if($n!=0){
+					echo "
+						<center>
+							<select id='s1' onChange='qq();' style='font-size: 20px;'>
+					";
+						for($i=1;$i<=$data_number_result;$i++){
+							if(isset($_GET['n'])){
+								if($i==$_GET['n']){
+									echo "<option value='".$i."' selected>第".$i."頁</option>";
+								}else{
+									echo "<option value='".$i."' >第".$i."頁</option>";
+								}
+							}else{
+								if($i==1){
+									echo "<option value='".$i."' selected>第".$i."頁</option>";
+								}else{
+									echo "<option value='".$i."' >第".$i."頁</option>";
+								}
+							}
+						}
+						echo "	
+							</select>
+						</center>
+					";
+				//}
+			}
+		?>
 		<?php
 			//查詢社會適應量表題目並存到陣列
 			$arrayq=[];
