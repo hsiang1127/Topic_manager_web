@@ -44,7 +44,7 @@
 					$n=($_GET['n']*10)-10;
 					$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`write_diary_time` limit ".$n.",10");
 				}else{
-					$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`write_diary_time`");
+					$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`write_diary_time` limit 0,10");
 				}
 				//$sel_diary=mysqli_query($conn,"SELECT * FROM `diary` ORDER BY `student_id`,`write_diary_time`");
 				$n = mysqli_num_rows($sel_diary);
