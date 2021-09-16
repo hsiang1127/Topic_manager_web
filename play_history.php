@@ -47,7 +47,7 @@
 		<table align='center' width='55%'>
 			<?php
 				if(isset($_GET['n'])){
-					$n=($_GET['n']*10)-10
+					$n=($_GET['n']*10)-10;
 					$sel_play_history=mysqli_query($conn,"select * from `play_history` ORDER BY `play_date` ASC limit ".$n.",10");
 				}else{
 					$sel_play_history=mysqli_query($conn,"select * from `play_history` ORDER BY `play_date` ASC limit 0,10");
