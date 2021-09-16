@@ -206,7 +206,7 @@
 				//$selstu=mysqli_query($conn,"select * from `student`");
 				$selstu=mysqli_query($conn,"SELECT `student_id` FROM (SELECT * from(SELECT *,min(`write_time`) as `max`,count(`student_id`) as `n` FROM `adaptation_scale_w` where `student_id`<>\"\" GROUP BY `student_id` ORDER BY `student_id`)as `sel1`) AS `sel2`");
 				while($selstu_ok=mysqli_fetch_array($selstu)){
-					echo "<option value=\"$selstu_ok[user_id]\">";
+					echo "<option value=\"$selstu_ok[student_id]\">";
 				}
 			?>
 			</datalist>
