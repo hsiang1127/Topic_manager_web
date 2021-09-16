@@ -435,7 +435,7 @@
 			
 			<?php
 				if(isset($_GET['n'])){
-					$n=($_GET['n'])-10;
+					$n=($_GET['n']*10)-10;
 					$sel_mood_disorders_scale=mysqli_query($conn,"SELECT * FROM `mood_disorders_scale_w` ORDER BY `parent_id`,`write_time` limit ".$n.",10");
 				}else{
 					$sel_mood_disorders_scale=mysqli_query($conn,"SELECT * FROM `mood_disorders_scale_w` ORDER BY `parent_id`,`write_time` limit 0,10");
